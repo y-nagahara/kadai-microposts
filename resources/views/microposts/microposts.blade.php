@@ -10,16 +10,17 @@
                     <p class="mb-0">{!! nl2br(e($micropost->content)) !!}</p>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="mr-3">
                         @include('favorite.favorite_button', ['micropost' => $micropost])
                     </div>
-                </div>
-                <div>
+                    
+                    <div class="mr-3">
                     @if (Auth::id() == $micropost->user_id)
                         {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-sm-6']) !!}
                         {!! Form::close() !!}
                     @endif
+                    </div>
                 </div>
             </div>
         </li>
